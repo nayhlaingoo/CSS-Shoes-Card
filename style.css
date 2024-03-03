@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/* Facebook: Tech With Nay */
+/* Tiktok: nayhlaing_93 */
+/* Github: nayhlaingoo */
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --dark-color-lighten: #3c3c3c;
+  --red: #a63939;
+  --blue: #3e8cc7;
+  --sky-blue: #46a6b1;
+  --yellow: #9a9a49;
+  --btn: #1a1a1a;
+  --btn-hover: #3a3a3a;
+  --text: #fbf7f7;
+  --shadow: -1px 15px 30px -12px rgb(32, 32, 32);
+  --border: 2px solid #5b69ff;
+  --glow: 0 0 1rem rgba(61, 93, 255, 0.258), 0 0 1.5rem rgba(61, 93, 255, 0.296),
+    0 0 2rem rgba(61, 93, 255, 0.5);
+}
+
+/*===== RESET =====*/
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--dark-color-lighten);
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+p {
+  margin: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+img {
+  max-width: 100%;
+  height: 100%;
+  user-select: none;
+  text-align: center;
+  object-fit: contain;
+}
+button {
+  font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  color: var(--text);
+  cursor: pointer;
+}
+input {
+  display: none;
+}
+
+/*===== CARD =====*/
+.container {
+  max-width: 850px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: auto;
+  padding: 2rem;
+}
+.card {
+  width: min(100%, 350px);
+  min-height: 430px;
+  color: var(--text);
+  box-shadow: var(--shadow);
+  border-radius: 0.9rem;
+  padding: 1rem;
+  transition: background-color 0.4s ease-in-out;
+}
+.card .product_image {
+  height: 230px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+  transition: transform 0.3s ease-out;
+}
+.card:hover .product_image {
+  transform: translate(0, -1rem) scale(1.1);
+}
+.card .product_info {
+  text-align: center;
+  height: auto;
+}
+.card .product_info .price {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/*===== CARD BUTTON =====*/
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.buy_btn {
+  background-color: var(--btn);
+  padding: 0.6rem 3.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 300ms ease;
+}
+.buy_btn:hover {
+  background-color: var(--btn-hover);
+}
+.fav {
+  box-sizing: border-box;
+  background: #fff;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--btn);
+  display: grid;
+  place-items: center;
+}
+.fav .svg {
+  height: 25px;
+  width: 25px;
+  fill: transparent;
+  transition: all 500ms ease;
+}
+.fav:hover .svg {
+  fill: var(--btn);
+}
+
+/*===== COLOR PALETTE =====*/
+.color_palette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #211f1f84;
+  width: fit-content;
+  padding: 0.7rem 2rem;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+.color_palette label {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/*===== MAIN STYLE: 
+CHANGE THE COLOR BASED ON THE CHECKED STATE OF THE INPUTS =====*/
+[id="red_card"] ~ .color_palette [for="red_card"] {
+  background-color: var(--red);
+}
+[id="blue_card"] ~ .color_palette [for="blue_card"] {
+  background-color: var(--blue);
+}
+[id="yellow_card"] ~ .color_palette [for="yellow_card"] {
+  background-color: var(--yellow);
+}
+[id="sky_blue_card"] ~ .color_palette [for="sky_blue_card"] {
+  background-color: var(--sky-blue);
+}
+
+/*===== SELECTED LABEL BASED ON THE CHECKED STATE OF THE INPUTS =====*/
+[id="red_card"]:checked ~ .color_palette [for="red_card"],
+[id="blue_card"]:checked ~ .color_palette [for="blue_card"],
+[id="yellow_card"]:checked ~ .color_palette [for="yellow_card"],
+[id="sky_blue_card"]:checked ~ .color_palette [for="sky_blue_card"] {
+  border: var(--border);
+  box-shadow: var(--glow);
+}
+
+/*===== CHANGE THE BG-COLOR OF CARD BASED ON THE CHECKED STATE OF THE INPUTS =====*/
+[id="red_card"]:checked ~ .card {
+  background-color: var(--red);
+}
+[id="blue_card"]:checked ~ .card {
+  background-color: var(--blue);
+}
+[id="yellow_card"]:checked ~ .card {
+  background-color: var(--yellow);
+}
+[id="sky_blue_card"]:checked ~ .card {
+  background-color: var(--sky-blue);
+}
+
+/*===== CHANGE THE CARD-IMAGE & INFO OF CARD BASED ON THE CHECKED STATE OF THE INPUTS =====*/
+[id="red_card"]:checked ~ .card .red,
+[id="blue_card"]:checked ~ .card .blue,
+[id="yellow_card"]:checked ~ .card .yellow,
+[id="sky_blue_card"]:checked ~ .card .sky_blue {
+  height: auto;
+  transform: translateY(-1rem) scale(1);
+  visibility: visible;
+  opacity: 1;
+}
+
+.card .red,
+.card .blue,
+.card .yellow,
+.card .sky_blue {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.5s ease-in-out, opacity 1s;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding: 1.2rem 0.5rem;
+    width: 100%;
+  }
+  .card {
+    padding: 0.5rem;
+  }
+  img {
+    max-width: 90%;
+  }
+  .color_palette {
+    margin-top: 10px;
+  }
+  .buy_btn {
+    font-size: 12px;
+  }
+  .fav .svg {
+    height: 20px;
+    width: 20px;
+  }
+}

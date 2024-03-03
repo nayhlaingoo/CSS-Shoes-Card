@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Nike Shoes</title>
+  </head>
+  <body>
+    <main class="container">
+      <input type="radio" name="card" id="red_card" value="red_card" checked />
+      <input type="radio" name="card" id="blue_card" value="blue_card" />
+      <input type="radio" name="card" id="yellow_card" value="yellow_card" />
+      <input
+        type="radio"
+        name="card"
+        id="sky_blue_card"
+        value="sky_blue_card"
+      />
+
+      <section class="card">
+        <!-- ===== RED SHOES ===== -->
+        <div class="red">
+          <div class="product_image">
+            <img
+              class="red_shoes"
+              src="./assets/red-shoes.png"
+              alt="Nike Red Edition"
+              draggable="false"
+            />
+          </div>
+
+          <div class="product_info">
+            <h2>Nike X OFF Red</h2>
+            <p>The 10: Air Jordan 1 off-Red - Chicago</p>
+            <div class="price">$999</div>
+          </div>
+        </div>
+        <!-- ===== BLUE SHOES ===== -->
+        <div class="blue">
+          <div class="product_image">
+            <img
+              class="blue_shoes"
+              src="./assets/blue-shoes.png"
+              alt="Nike Blue Edition"
+              draggable="false"
+            />
+          </div>
+
+          <div class="product_info">
+            <h2>Nike BLue Edition</h2>
+            <p>The 10: Air Jordan Off-Blue - Chicago</p>
+            <div class="price">$1599</div>
+          </div>
+        </div>
+        <!-- ===== YELLOW SHOES ===== -->
+        <div class="yellow">
+          <div class="product_image">
+            <!-- this image size doesn't match the others, So fixed with inline style -->
+            <img
+              style="scale: 1.08; transform: rotate(7deg)"
+              class="blue_shoes"
+              src="./assets/yellow-shoes.png"
+              alt="Nike Yellow Edition"
+              draggable="false"
+            />
+          </div>
+
+          <div class="product_info">
+            <h2>Nike X Off Yellow</h2>
+            <p>Air Jordan Retro Off-Yellow - Edition</p>
+            <div class="price">$1499</div>
+          </div>
+        </div>
+        <!-- ===== SKY BLUE SHOES ===== -->
+        <div class="sky_blue">
+          <div class="product_image">
+            <!-- this image size doesn't match the others, So fixed with inline style -->
+            <img
+              style="transform: translate(0, -20px) scale(1.1) rotate(4deg)"
+              class="sky_blue_shoes"
+              src="./assets/sky-blue-shoes.png"
+              alt="Nike Sky Blue Edition"
+              draggable="false"
+            />
+          </div>
+
+          <div class="product_info">
+            <h2>Nike X Sky-Blue</h2>
+            <p>Air Jordan 1 High Sky-Blue - Edition</p>
+            <div class="price">$1559</div>
+          </div>
+        </div>
+
+        <div class="btn">
+          <button class="buy_btn">Buy Now</button>
+          <button class="fav">
+            <svg
+              class="svg"
+              id="i-star"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32"
+              stroke="#000"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path
+                d="M16 2 L20 12 30 12 22 19 25 30 16 23 7 30 10 19 2 12 12 12 Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <div class="color_palette">
+        <label title="Red" for="red_card"></label>
+        <label title="Blue" for="blue_card"></label>
+        <label title="Yellow" for="yellow_card"></label>
+        <label title="Sky Blue" for="sky_blue_card"></label>
+      </div>
+    </main>
+  </body>
+</html>
